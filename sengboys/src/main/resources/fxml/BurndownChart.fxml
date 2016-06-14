@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.*?>
+<?import seng302.group3.model.DateAxis?>
+<VBox fx:controller="seng302.group3.model.gui.BurndownChartController" xmlns:fx="http://javafx.com/fxml" stylesheets="/css/editorSheet.css" styleClass="container">
+    <GridPane hgap="5">
+        <ComboBox GridPane.rowIndex="0" GridPane.columnIndex="0" prefWidth="300" fx:id="BurndownSprint" styleClass="orderSelectionCombo"/>
+        <CheckBox GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="200" fx:id="burnupToggle">Show Burnup</CheckBox>
+        <Button GridPane.rowIndex="0" GridPane.columnIndex="2" GridPane.halignment="LEFT" fx:id="velocityLabel" styleClass="okayButton"></Button>
+        <LineChart animated="false" GridPane.rowIndex="1" GridPane.columnIndex="0" GridPane.columnSpan="3" prefWidth="Infinity" prefHeight="2000" fx:id="burndown" title="Burndown">
+            <xAxis><DateAxis fx:id="dateAxis" label="Date"/></xAxis>
+            <yAxis><NumberAxis fx:id="hourAxis" label="Hours"/></yAxis>
+        </LineChart>
+    </GridPane>
+</VBox>
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.*?>
+<?import seng302.group3.model.DateAxis?>
+<VBox xmlns:fx="http://javafx.com/fxml" stylesheets="/css/editorSheet.css" styleClass="dialogControlButtons">
+
+    <GridPane styleClass="buttons" hgap="10" vgap="5" minHeight="500" minWidth="900">
+        <ScrollPane GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="2" maxHeight="500" minHeight="500" maxWidth="900" minWidth="900">
+
+                <LineChart  fx:id="Calendar" minHeight="480">
+                    <xAxis><DateAxis label="Date"/></xAxis>
+                    <yAxis><CategoryAxis label="Teams"/></yAxis>
+                </LineChart>
+
+        </ScrollPane>
+        <Button GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.halignment="RIGHT" styleClass="okayButton" fx:id="AcceptButton">OK</Button>
+    </GridPane>
+</VBox>

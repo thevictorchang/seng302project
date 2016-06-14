@@ -1,0 +1,10 @@
+<!DOCTYPE organisation [
+        <!ELEMENT organisation (projects, backlogs, stories, teams, people, skills, releases)>
+        <!ELEMENT projects ANY>
+        <!ELEMENT backlogs ANY>
+        <!ELEMENT stories ANY>
+        <!ELEMENT teams ANY>
+        <!ELEMENT people ANY>
+        <!ELEMENT skills ANY>
+        <!ELEMENT releases ANY>
+        ]>

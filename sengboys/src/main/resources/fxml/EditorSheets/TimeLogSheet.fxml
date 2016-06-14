@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml" stylesheets="/css/editorSheet.css" styleClass="container">
+    <GridPane hgap="2" vgap="5" >
+        <HBox GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="3" fx:id="labels">
+            <Label minWidth="100">People</Label>
+            <Label minWidth="100">Partner</Label>
+            <Label minWidth="120">Select Date</Label>
+            <Label minWidth="60">Time</Label>
+            <Label minWidth="100">Duration</Label>
+            <Label minWidth="200">Log Comment</Label>
+
+        </HBox>
+
+
+        <HBox fx:id="newTimeLogHBox" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="3"/>
+
+        <ListView fx:id="timeScrollList" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="3" GridPane.rowSpan="4"/>
+
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="7" GridPane.columnSpan="3" styleClass="errorlabel" fx:id="errorLabel"/>
+    </GridPane>
+</VBox>

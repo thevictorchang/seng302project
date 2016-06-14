@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<?import javafx.scene.text.Font?>
+<VBox xmlns:fx="http://javafx.com/fxml" stylesheets="/css/editorSheet.css" styleClass="dialogControlButtons">
+    <VBox fx:id="content"></VBox>
+
+    <GridPane styleClass="buttons" hgap="10">
+        <Button GridPane.columnIndex="0" styleClass="okayButton" fx:id="UnassignButton"></Button>
+        <Button GridPane.columnIndex="1" styleClass="okayButton" fx:id="DeleteButton"></Button>
+        <Button GridPane.columnIndex="2" styleClass="okayButton" fx:id="CancelButton">CANCEL</Button>
+    </GridPane>
+</VBox>

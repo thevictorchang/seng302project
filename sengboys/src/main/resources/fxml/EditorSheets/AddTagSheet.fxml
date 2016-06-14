@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml" stylesheets="/css/editorSheet.css" styleClass="container">
+    <GridPane hgap="2" vgap="5">
+        <Label GridPane.rowIndex="0" GridPane.columnIndex="0">Name: </Label>
+        <TextField GridPane.rowIndex="0" GridPane.columnIndex="1" fx:id="nameTextField"></TextField>
+
+        <Label GridPane.rowIndex="2" GridPane.columnIndex="0">Description: </Label>
+        <TextField GridPane.rowIndex="2" GridPane.columnIndex="1" fx:id="descriptionTextField"></TextField>
+
+        <Label GridPane.rowIndex="3" GridPane.columnIndex="0">Colour: </Label>
+
+        <ComboBox fx:id="colourComboBox" GridPane.rowIndex="3" GridPane.columnIndex="1" value="None" styleClass="dialogCombo"></ComboBox>
+
+        <Label GridPane.rowIndex="4" GridPane.columnIndex="0"  GridPane.columnSpan="2" styleClass="errorlabel" fx:id="errorLabel"></Label>
+    </GridPane>
+</VBox>

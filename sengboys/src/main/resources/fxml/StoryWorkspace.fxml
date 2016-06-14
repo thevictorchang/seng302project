@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.*?>
+<?import seng302.group3.model.gui.story_workspace.ZoomableScrollPane?>
+<VBox fx:controller="seng302.group3.model.gui.story_workspace.StoryWorkspaceController" xmlns:fx="http://javafx.com/fxml" stylesheets="/css/editorSheet.css" styleClass="container" prefHeight="1000">
+    <GridPane hgap="5" vgap="5">
+        <ComboBox GridPane.rowIndex="0" GridPane.columnIndex="0" prefWidth="300" fx:id="BacklogSelection" styleClass="orderSelectionCombo" GridPane.hgrow="NEVER" minWidth="300"/>
+        <ListView GridPane.rowIndex="1" GridPane.columnIndex="0" prefWidth="300" fx:id="StorySelection" GridPane.hgrow="NEVER" minWidth="300"/>
+        <ZoomableScrollPane GridPane.rowIndex="0" GridPane.rowSpan="2" GridPane.columnIndex="1" fx:id="CardsScrollPane">
+            <content>
+                <StackPane prefWidth="2000" prefHeight="1400" fx:id="CardsStackPane">
+
+                </StackPane>
+            </content>
+        </ZoomableScrollPane>
+    </GridPane>
+</VBox>
+

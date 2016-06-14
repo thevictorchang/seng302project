@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" stylesheets="/css/editorSheet.css" styleClass="container">
+    <GridPane hgap="2" vgap="5">
+        <Label GridPane.rowIndex="0" GridPane.columnIndex="0">Current Tags </Label>
+        <VBox GridPane.rowIndex="1" GridPane.rowSpan="5" GridPane.columnIndex="0" GridPane.columnSpan="6" fx:id="currentTagList" prefHeight="150">
+            <children>
+                <ListView fx:id="currentTagListView"/>
+            </children>
+        </VBox>
+
+
+        <Button minWidth="10" GridPane.rowIndex="1" GridPane.columnIndex="6" fx:id="buttonNewTag" onAction="#buttonNewTag" styleClass="dialogButton">
+            <graphic>
+                <ImageView>
+                    <Image url="/imgs/plus.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <Button minWidth="10" GridPane.rowIndex="2" GridPane.columnIndex="6" fx:id="buttonEditTag" onAction="#buttonEditTag" styleClass="dialogButton">
+            <graphic>
+                <ImageView>
+                    <Image url="/imgs/pencil.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+
+
+        <!-- removed until delete works!!!
+        <Button minWidth="10" GridPane.rowIndex="3" GridPane.columnIndex="6" fx:id="buttonDeleteTag" onAction="#buttonDeleteTag" styleClass="dialogButton">
+            <graphic>
+                <ImageView>
+                    <Image url="/imgs/rubbishbin.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+        -->
+
+        <Button minWidth="10" GridPane.rowIndex="4" GridPane.columnIndex="6" fx:id="buttonAddTag" onAction="#buttonAddTag" styleClass="dialogButton">
+            <graphic>
+                <ImageView>
+                    <Image url="/imgs/leftArrow.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <Button minWidth="10" GridPane.rowIndex="5" GridPane.columnIndex="6" fx:id="buttonRemoveTag" onAction="#buttonRemoveTag" styleClass="dialogButton">
+            <graphic>
+                <ImageView>
+                    <Image url="/imgs/rightArrow.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <Label GridPane.rowIndex="0" GridPane.columnIndex="7">Available Tags </Label>
+        <VBox GridPane.rowIndex="1" GridPane.rowSpan="5" GridPane.columnIndex="7" GridPane.columnSpan="6" fx:id="availableTagList" prefHeight="150">
+            <children>
+                <ListView fx:id="availableTagListView"/>
+            </children>
+        </VBox>
+
+
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="2" styleClass="errorlabel" fx:id="errorLabel"></Label>
+    </GridPane>
+</VBox>

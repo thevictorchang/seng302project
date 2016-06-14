@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml" stylesheets="/css/editorSheet.css" styleClass="container">
+    <GridPane hgap="10" vgap="5">
+        <Label GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="3">Short Name: </Label>
+        <TextField GridPane.rowIndex="0" GridPane.columnIndex="3" fx:id="shortNameTextField"/>
+
+        <Label GridPane.rowIndex="0" GridPane.columnIndex="4" GridPane.columnSpan="3">Full Name: </Label>
+        <TextField GridPane.rowIndex="0" GridPane.columnIndex="7" fx:id="fullNameTextField"/>
+
+        <Label GridPane.rowIndex="1" GridPane.columnIndex="0" GridPane.columnSpan="3">Description: </Label>
+        <TextField GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="8" fx:id="descriptionTextField"/>
+
+        <Label GridPane.rowIndex="3" GridPane.columnIndex="0" GridPane.columnSpan="3">Creator: </Label>
+        <ComboBox GridPane.rowIndex="3" GridPane.columnIndex="3" fx:id="personComboBox" styleClass="dialogCombo"></ComboBox>
+
+        <Label GridPane.rowIndex="3" GridPane.columnIndex="4" GridPane.columnSpan="3">Backlog: </Label>
+        <ComboBox GridPane.rowIndex="3" GridPane.columnIndex="7" fx:id="backlogComboBox" styleClass="dialogCombo"/>
+
+        <Label GridPane.rowIndex="4" GridPane.columnIndex="0" GridPane.columnSpan="3">Estimate: </Label>
+        <ComboBox GridPane.rowIndex="4" GridPane.columnIndex="3" fx:id="estimateComboBox" styleClass="dialogCombo"/>
+
+        <Label GridPane.rowIndex="4" GridPane.columnIndex="4" GridPane.columnSpan="3" fx:id="readyLabel">Ready: </Label>
+        <CheckBox GridPane.rowIndex="4" GridPane.columnIndex="7" fx:id="readyCheckBox"/>
+
+        <Label GridPane.rowIndex="5" GridPane.columnIndex="0" GridPane.columnSpan="3" text="Acceptance Criteria"/>
+        <VBox GridPane.rowIndex="6" GridPane.columnIndex="0" GridPane.columnSpan="4" fx:id="acceptanceCriteriaList" prefHeight="150">
+            <children>
+                <ListView fx:id="acceptanceCriteriaListView"/>
+            </children>
+        </VBox>
+
+        <Button minWidth="10" GridPane.rowIndex="7" GridPane.columnIndex="0" fx:id="buttonNewAC" onAction="#buttonNewAC" styleClass="dialogButton">
+            <graphic>
+                <ImageView>
+                    <Image url="/imgs/plus.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button minWidth="10" GridPane.rowIndex="7" GridPane.columnIndex="1" fx:id="buttonEditAC" onAction="#buttonEditAC" styleClass="dialogButton">
+            <graphic>
+                <ImageView>
+                    <Image url="/imgs/pencil.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button minWidth="10" GridPane.rowIndex="7" GridPane.columnIndex="2" fx:id="buttonDeleteAC" onAction="#buttonDeleteAC" styleClass="dialogButton">
+            <graphic>
+                <ImageView>
+                    <Image url="/imgs/rubbishbin.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <Label GridPane.rowIndex="8" GridPane.columnIndex="0" GridPane.columnSpan="3" text="Depends on"/>
+        <VBox GridPane.rowIndex="9" GridPane.columnIndex="0" GridPane.columnSpan="4" fx:id="dependencyList" prefHeight="90">
+            <children>
+                <ListView fx:id="dependencyListView"  />
+            </children>
+        </VBox>
+        <Button minWidth="10" GridPane.rowIndex="10" GridPane.columnIndex="0" fx:id="buttonNewDependency" onAction="#buttonNewDependency" styleClass="dialogButton">
+            <graphic>
+                <ImageView>
+                    <Image url="/imgs/plus.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button minWidth="10" GridPane.rowIndex="10" GridPane.columnIndex="1" fx:id="buttonDeleteDependency" onAction="#buttonDeleteDependency" styleClass="dialogButton">
+            <graphic>
+                <ImageView>
+                    <Image url="/imgs/rubbishbin.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <Label GridPane.rowIndex="5" GridPane.columnIndex="4" GridPane.columnSpan="3" text="Tasks"/>
+        <VBox GridPane.rowIndex="6" GridPane.columnIndex="4" GridPane.columnSpan="4" fx:id="storyTasks" prefHeight="150">
+            <children>
+                <ListView fx:id="storyTasksListView"/>
+            </children>
+        </VBox>
+        <Button minWidth="10" GridPane.rowIndex="7" GridPane.columnIndex="4" fx:id="buttonNewTask" onAction="#buttonNewTask" styleClass="dialogButton">
+            <graphic>
+                <ImageView>
+                    <Image url="/imgs/plus.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button minWidth="10" GridPane.rowIndex="7" GridPane.columnIndex="5" fx:id="buttonEditTask" onAction="#buttonEditTask" styleClass="dialogButton">
+            <graphic>
+                <ImageView>
+                    <Image url="/imgs/pencil.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button minWidth="10" GridPane.rowIndex="7" GridPane.columnIndex="6" fx:id="buttonDeleteTask" onAction="#buttonDeleteTask" styleClass="dialogButton">
+            <graphic>
+                <ImageView>
+                    <Image url="/imgs/rubbishbin.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="11" GridPane.columnSpan="4" styleClass="errorlabel" fx:id="errorLabel"/>
+
+    </GridPane>
+</VBox>

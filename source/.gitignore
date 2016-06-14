@@ -1,0 +1,15 @@
+# Intellij
+.idea/
+./sengboys/.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+
+./sengboys/.idea/workspace.xml
+./sengboys/.idea/misc.xml

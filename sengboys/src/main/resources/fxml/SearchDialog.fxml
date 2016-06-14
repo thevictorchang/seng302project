@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<?import javafx.scene.text.Font?>
+<VBox xmlns:fx="http://javafx.com/fxml" stylesheets="/css/editorSheet.css" styleClass="search" prefWidth="500">
+
+    <TextField fx:id="SearchField"></TextField>
+
+    <VBox fx:id="content" prefHeight="120">
+    </VBox>
+
+    <VBox>
+        <ListView fx:id="searchResultsList" styleClass="searchList"></ListView>
+    </VBox>
+
+    <GridPane styleClass="buttons" hgap="10">
+        <Button GridPane.columnIndex="2" styleClass="okayButton" fx:id="CancelButton">CANCEL</Button>
+    </GridPane>
+</VBox>

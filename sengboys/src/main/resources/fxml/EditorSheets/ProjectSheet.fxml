@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml" stylesheets="/css/editorSheet.css" styleClass="container">
+    <GridPane hgap="10" vgap="5">
+        <Label GridPane.rowIndex="0" GridPane.columnIndex="0">Short Name: </Label>
+        <TextField GridPane.rowIndex="0" GridPane.columnIndex="1" GridPane.columnSpan="2" fx:id="shortNameTextField"></TextField>
+
+        <Label GridPane.rowIndex="1" GridPane.columnIndex="0">Long Name: </Label>
+        <TextField GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.columnSpan="2" fx:id="longNameTextField"></TextField>
+
+        <Label GridPane.rowIndex="2" GridPane.columnIndex="0">Description: </Label>
+        <TextField GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.columnSpan="2" fx:id="descriptionTextField"></TextField>
+
+        <Label GridPane.rowIndex="3" GridPane.columnIndex="0" fx:id="addTeamsCurrent" alignment="TOP_LEFT" text="Current Allocations"></Label>
+        <Label GridPane.rowIndex="3" GridPane.columnIndex="2" fx:id="addTeamsAvailable" alignment="TOP_LEFT" text="Available teams"></Label>
+
+        <VBox GridPane.rowIndex="4" GridPane.columnIndex="0" GridPane.rowSpan="4" fx:id="currentTeamsList" prefHeight="150">
+            <children>
+                <ListView fx:id="allCurrentTeamsListView" prefWidth="150.0" />
+                <TextField fx:id="currentTeamsTextField" promptText="Search"></TextField>
+            </children>
+        </VBox>
+        <VBox GridPane.rowIndex="4" GridPane.columnIndex="2" GridPane.rowSpan="4" fx:id="availableTeamsList" prefHeight="112.5">
+            <children>
+                <ListView fx:id="allAvailableTeamsListView" prefWidth="150.0" />
+                <TextField fx:id="availableTeamsTextField" promptText="Search"></TextField>
+            </children>
+        </VBox>
+
+        <!--<ToggleButton GridPane.rowIndex="7" GridPane.columnIndex="2" fx:id="buttonFilterTeams" text="Filter Teams"></ToggleButton>-->
+
+
+        <Button GridPane.rowIndex="5" GridPane.columnIndex="1" fx:id="buttonAddTeam" onAction="#buttonAddTeam" styleClass="dialogButton">
+            <graphic>
+                <ImageView>
+                    <Image url="/imgs/leftArrow.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button GridPane.rowIndex="6" GridPane.columnIndex="1" fx:id="buttonRemoveTeam" onAction="#buttonRemoveTeam" styleClass="dialogButton">
+            <graphic>
+                <ImageView>
+                    <Image url="/imgs/rightArrow.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button  GridPane.rowIndex="8" fx:id="buttonShowAllocations" text="Show Team Allocations" onAction="#buttonShowAllocation" styleClass="dialogButton"></Button>
+
+
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="9" GridPane.columnSpan="3" styleClass="errorlabel" fx:id="errorLabel"></Label>
+
+    </GridPane>
+
+
+</VBox>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<VBox xmlns:fx="http://javafx.com/fxml" stylesheets="/css/editorSheet.css" styleClass="container">
+    <GridPane hgap="10" vgap="5">
+        <Label GridPane.rowIndex="0" GridPane.columnIndex="0">Short Name: </Label>
+        <TextField GridPane.rowIndex="0" GridPane.columnIndex="1" GridPane.columnSpan="2" fx:id="shortNameTextField"></TextField>
+
+        <Label GridPane.rowIndex="1" GridPane.columnIndex="0">Full Name: </Label>
+        <TextField GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.columnSpan="2" fx:id="fullNameTextField"></TextField>
+
+        <Label GridPane.rowIndex="2" GridPane.columnIndex="0">User ID: </Label>
+        <TextField GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.columnSpan="2" fx:id="userIDTextField"></TextField>
+
+        <Label GridPane.rowIndex="3" GridPane.columnIndex="0" text="Add to Project"> </Label>
+        <ComboBox fx:id="projectChoice" GridPane.rowIndex="4" GridPane.columnIndex="0" value="None" styleClass="dialogCombo"></ComboBox>
+        <Label GridPane.rowIndex="3" GridPane.columnIndex="2" text="Add to Team"> </Label>
+        <ComboBox fx:id="teamChoice" GridPane.rowIndex="4" GridPane.columnIndex="2" value="None" styleClass="dialogCombo"></ComboBox>
+
+        <Label GridPane.rowIndex="5" GridPane.columnIndex="0"  fx:id="addSkillsCurrent"  text="Current Skills"></Label>
+        <Label GridPane.rowIndex="5" GridPane.columnIndex="2" fx:id="addSkillsAvailable"  text="Available Skills"></Label>
+
+        <VBox GridPane.rowIndex="6" GridPane.columnIndex="0" GridPane.rowSpan="4" fx:id="currentSkillsList" prefHeight="150">
+            <children>
+                <ListView fx:id="allCurrentSkillsListView" prefWidth="150.0" />
+                <TextField fx:id="currentSkillsTextField" promptText="Search"></TextField>
+            </children>
+        </VBox>
+        <VBox GridPane.rowIndex="6" GridPane.columnIndex="2" GridPane.rowSpan="4" fx:id="availableSkillsList" prefHeight="150">
+            <children>
+                <ListView fx:id="allAvailableSkillsListView" prefWidth="150.0" />
+                <TextField fx:id="availableSkillsTextField" promptText="Search"></TextField>
+            </children>
+        </VBox>
+
+        <Button GridPane.rowIndex="7" GridPane.columnIndex="1" fx:id="buttonAddSkill" onAction="#buttonAddSkill" styleClass="dialogButton">
+            <graphic>
+                <ImageView>
+                    <Image url="/imgs/leftArrow.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button GridPane.rowIndex="8" GridPane.columnIndex="1" fx:id="buttonRemoveSkill" onAction="#buttonRemoveSkill" styleClass="dialogButton">
+            <graphic>
+                <ImageView>
+                    <Image url="/imgs/rightArrow.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+
+
+
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="10" GridPane.columnSpan="3" styleClass="errorlabel" fx:id="errorLabel"></Label>
+    </GridPane>
+</VBox>

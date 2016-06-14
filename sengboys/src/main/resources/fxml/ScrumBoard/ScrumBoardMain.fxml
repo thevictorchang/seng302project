@@ -1,0 +1,9 @@
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.*?>
+<VBox fx:controller="seng302.group3.model.gui.scrum_board.ScrumBoardController" xmlns:fx="http://javafx.com/fxml" stylesheets="/css/editorSheet.css" styleClass="container">
+    <GridPane>
+        <ComboBox GridPane.rowIndex="0" GridPane.columnIndex="0" prefWidth="300" fx:id="SprintComboBox" styleClass="orderSelectionCombo"/>
+        <ListView GridPane.rowIndex="1" GridPane.columnIndex="0" GridPane.columnSpan="2" prefWidth="Infinity" prefHeight="2000" styleClass="scrumBoardStoryList" fx:id="scrumBoard"/>
+    </GridPane>
+</VBox>

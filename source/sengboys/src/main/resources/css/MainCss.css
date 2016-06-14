@@ -1,0 +1,26 @@
+.menubar{
+    -fx-background-color: skyblue;
+
+}
+
+.body{
+    -fx-background-color: white;
+    -fx-border-style: hidden;
+    -fx-border-width: 10px;
+    -fx-effect: dropshadow(gaussian, black, 5, 0.0, 0, 0);
+    -fx-padding: 5px;
+
+
+
+}
+.bodyRight{
+    -fx-background-color: white;
+    -fx-border-style: hidden;
+    -fx-border-width: 10px;
+    -fx-effect: dropshadow(gaussian, black, 5, 0.0, 0, 0);
+    -fx-spacing: 5px;
+
+}
+.underline{
+    -fx-underline: true;
+}

@@ -1,0 +1,7 @@
+<root>
+    <item name='javafx.scene.control.ComboBox void setCellFactory(javafx.util.Callback&lt;javafx.scene.control.ListView&lt;T&gt;,javafx.scene.control.ListCell&lt;T&gt;&gt;)'>
+        <annotation name='org.jetbrains.annotations.Contract'>
+            <val val="&quot;null -&gt; _&quot;"/>
+        </annotation>
+    </item>
+</root>

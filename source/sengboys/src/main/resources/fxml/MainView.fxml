@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<?import javafx.scene.text.Font?>
+<BorderPane prefHeight="200" prefWidth="620"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="seng302.group3.controller.MainController" stylesheets="/css/MainCss.css">
+
+    <top >
+        <MenuBar fx:id="menuBar" styleClass="menubar">
+            <menus>
+                <Menu text="File" >
+                    <items>
+                        <Menu text="New">
+                            <MenuItem text="Project" onAction="#menuBarNewProjectButton"/>
+                            <SeparatorMenuItem  />
+                        </Menu>
+                        <MenuItem fx:id="menuBarSaveButton" text="Save Project" onAction="#menuBarSaveButton"/>
+                        <MenuItem fx:id="menuBarSaveAsButton" text="Save Project As..." onAction="#menuBarSaveAsButton"/>
+                        <MenuItem fx:id="menuBarLoadButton" text="Load Project..." onAction="#menuBarLoadButton"/>
+                        <MenuItem  fx:id="editProjectMenuItem"  text="Edit Project" onAction="#menuBarEditButton"/>
+                        <SeparatorMenuItem  />
+                        <MenuItem text="Exit" onAction="#menuBarExitButton"/>
+                    </items>
+                </Menu>
+                <Menu text="Edit" >
+                    <items>
+                        <MenuItem fx:id="undoMenuItem" text="Undo" onAction="#undoMenuItem"/>
+                        <MenuItem fx:id="redoMenuItem" text="Redo" onAction="#redoMenuItem"/>
+                        <SeparatorMenuItem  />
+                        <MenuItem fx:id="editPerson" text="Person" onAction="#menuBarEditPersonButton"/>
+                    </items>
+                </Menu>
+                <Menu text="Display" >
+                    <items>
+                        <CheckMenuItem fx:id="Team" text="Team" onAction="#menuBarListToggle"/>
+                    </items>
+                </Menu>
+                <Menu text="Add">
+                    <items>
+                        <MenuItem fx:id="addPerson" text="Person" onAction="#menuBarNewPersonButton"/>
+                    </items>
+                </Menu>
+
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <VBox fx:id="personInfo" styleClass="body">
+            <children>
+                <Label fx:id="personLabel" alignment="TOP_LEFT" text="Persons Info" styleClass="underline"></Label>
+                <Label fx:id="personText" BorderPane.alignment="CENTER"></Label>
+            </children>
+        </VBox>
+    </center>
+    <left>
+        <VBox fx:id="teamList" styleClass="body">
+            <children>
+                <Label fx:id="titleLabel" alignment="TOP_LEFT" text="Team">
+                </Label>
+                <ListView fx:id="allPeopleListView" prefWidth="150.0" />
+            </children>
+        </VBox>
+    </left>
+    <right>
+        <TextArea fx:id="bodyText" prefHeight="200" prefWidth="300" text="Welcome, Type Here" styleClass="bodyRight"/>
+    </right>
+    <bottom>
+        <Label fx:id="outputLine" prefHeight="15" prefWidth="Infinity"></Label>
+    </bottom>
+
+
+</BorderPane>

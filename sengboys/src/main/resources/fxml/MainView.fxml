@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.Pane?>
+<BorderPane prefHeight="200" prefWidth="620"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="seng302.group3.controller.MainController" stylesheets="/css/MainCss.css" styleClass="border-pane">
+
+    <left>
+        <VBox fx:id="navigator" styleClass="bodyList">
+            <children>
+                <HBox styleClass="orderSelectionBox">
+                    <Label >
+                        <padding><Insets top="5" right="5" bottom="5" left="5"/></padding>
+                        Sort by :
+                    </Label>
+                    <ComboBox prefWidth="115" fx:id="orderSelectionCombo" styleClass="orderSelectionCombo"></ComboBox>
+                </HBox>
+                <ListView fx:id="navigatorListView" prefWidth="250" prefHeight="10800.0" styleClass="navigatorListView"/>
+            </children>
+        </VBox>
+
+    </left>
+
+    <top >
+        <VBox styleClass="topBar">
+            <MenuBar fx:id="menuBar" styleClass="menubar">
+                <menus>
+                    <Menu text="File">
+                        <items>
+                            <MenuItem fx:id="menuBarNewOrganisationButton" text="New Organisation" onAction="#menuBarNewOrganisationButton"/>
+                            <Menu text="New">
+                                <items>
+                                    <MenuItem fx:id="addPerson" text="Person" onAction="#menuBarNewPersonButton"/>
+                                    <MenuItem fx:id="addSkill" text="Skill" onAction="#menuBarNewSkillButton"/>
+                                    <MenuItem text="Team" onAction="#menuBarNewTeamButton"/>
+                                    <SeparatorMenuItem  />
+                                    <MenuItem text="Project" onAction="#menuBarNewProjectButton"/>
+                                    <MenuItem fx:id="addRelease" text="Release" onAction="#menuBarNewReleaseButton"/>
+                                    <MenuItem fx:id="addStory" text="Story" onAction="#menuBarNewStoryButton"/>
+                                    <MenuItem fx:id="addBacklog" text="Backlog" onAction="#menuBarNewBacklogButton"/>
+                                    <MenuItem fx:id="addSprint" text="Sprint" onAction="#menuBarNewSprintButton"/>
+                                </items>
+                                <SeparatorMenuItem  />
+                            </Menu>
+                            <MenuItem fx:id="menuBarSaveButton" text="Save" onAction="#menuBarSaveButton"/>
+                            <MenuItem fx:id="menuBarSaveAsButton" text="Save As..." onAction="#menuBarSaveAsButton"/>
+                            <MenuItem fx:id="menuBarLoadButton" text="Open" onAction="#menuBarLoadButton"/>
+                            <MenuItem fx:id="menuBarExportButton" text="Export to XML" onAction="#menuBarExportButton"/>
+                            <MenuItem fx:id="generateSampleOrgButton" text="Export to XML" onAction="#generateSampleOrgButton" visible="false"/>
+                            <SeparatorMenuItem  />
+                            <MenuItem text="Quit" onAction="#menuBarExitButton"/>
+                        </items>
+                    </Menu>
+                    <Menu text="Edit">
+                        <items>
+                            <MenuItem fx:id="searchMenuItem" text="Search" onAction="#searchMenuItem"/>
+                            <SeparatorMenuItem  />
+                            <MenuItem fx:id="undoMenuItem" text="Undo" onAction="#undoMenuItem"/>
+                            <MenuItem fx:id="redoMenuItem" text="Redo" onAction="#redoMenuItem"/>
+                            <SeparatorMenuItem  />
+                            <MenuItem fx:id="editMenuItem" text="Edit" onAction="#menuButtonEdit"/>
+                            <SeparatorMenuItem  />
+                            <MenuItem fx:id="revertMenuItem" text="Revert" onAction="#menuBarRevertButton"/>
+                            <MenuItem fx:id="deleteMenuItem" text="Delete" onAction="#menuBarDeleteButton"/>
+                        </items>
+                    </Menu>
+                    <Menu text="Display">
+                        <items>
+                            <CheckMenuItem fx:id="navigatorCheckItem" text="Navigator" onAction="#menuBarNavigatorToggle"/>
+                            <CheckMenuItem fx:id="toolbarFileCheck" text="Show file toolbar" onAction="#menuBarToolBarFileToggle"/>
+                            <CheckMenuItem fx:id="toolbarEditCheck" text="Show edit toolbar" onAction="#menuBarToolBarEditToggle"/>
+                            <CheckMenuItem fx:id="toolbarAddCheck" text="Show add toolbar" onAction="#menuBarToolBarAddToggle"/>
+                            <SeparatorMenuItem  />
+                            <CheckMenuItem fx:id="storyHighlightsCheckItem" text="Show story state" onAction="#storyHighlightsToggle"/>
+                        </items>
+                    </Menu>
+                </menus>
+            </MenuBar>
+            <ToolBar fx:id="toolBar" styleClass="toolbar">
+                <HBox fx:id="toolbarFileActions" spacing="5">
+                    <Button fx:id="toolbarSaveButton" onAction="#menuBarSaveButton" styleClass="mainbuttonstyle" >
+                        <tooltip>
+                            <Tooltip text="Save the Current Workspace"></Tooltip>
+                        </tooltip>
+                        <graphic>
+                            <ImageView>
+                                <Image url="/imgs/toolbar/save.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="toolbarOpenButton" onAction="#menuBarLoadButton" styleClass="mainbuttonstyle">
+                        <tooltip>
+                            <Tooltip text="Open a Saved File"></Tooltip>
+                        </tooltip>
+                        <graphic>
+                            <ImageView>
+                                <Image url="/imgs/toolbar/open.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="toolbarExportButton" onAction="#menuBarExportButton" styleClass="mainbuttonstyle">
+                        <tooltip>
+                            <Tooltip text="Export the Workspace to XML"></Tooltip>
+                        </tooltip>
+                        <graphic>
+                            <ImageView>
+                                <Image url="/imgs/toolbar/export.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </HBox>
+                <Separator styleClass="separator" fx:id="separatorone"/>
+                <HBox fx:id="toolbarEditor" spacing="5">
+                    <Button fx:id="toolbarUndoButton" onAction="#undoMenuItem" styleClass="mainbuttonstyle">
+                        <tooltip>
+                            <Tooltip text="Undo the Last Change Made"></Tooltip>
+                        </tooltip>
+                        <graphic>
+                            <ImageView>
+                                <Image url="/imgs/toolbar/undo.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="toolbarRedoButton" onAction="#redoMenuItem" styleClass="mainbuttonstyle">
+                        <tooltip>
+                            <Tooltip text="Redo the Last Undo"></Tooltip>
+                        </tooltip>
+                        <graphic>
+                            <ImageView>
+                                <Image url="/imgs/toolbar/redo.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="toolbarDeleteBar" onAction="#menuBarDeleteButton" styleClass="mainbuttonstyle" >
+                        <tooltip>
+                            <Tooltip text="Delete Currently Selected Item"></Tooltip>
+                        </tooltip>
+                        <graphic>
+                            <ImageView>
+                                <Image url="/imgs/toolbar/delete.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="toolbarEdit" onAction="#menuButtonEdit" styleClass="mainbuttonstyle">
+                        <tooltip>
+                            <Tooltip text="Edit the Currently Selected Item"></Tooltip>
+                        </tooltip>
+                        <graphic>
+                            <ImageView>
+                                <Image url="/imgs/pencil.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="toolbarSearch" onAction="#searchMenuItem" styleClass="mainbuttonstyle">
+                        <tooltip>
+                            <Tooltip text="Search All Items"></Tooltip>
+                        </tooltip>
+                        <graphic>
+                            <ImageView>
+                                <Image url="/imgs/toolbar/magnifyingGlass.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </HBox>
+                <Separator styleClass="separator" fx:id="separatortwo"/>
+                <HBox fx:id="toolbarAdditions" spacing="5">
+                    <Button fx:id="toolbarbacklog" onAction="#menuBarNewBacklogButton" styleClass="mainbuttonstyle">
+                        <tooltip>
+                            <Tooltip text="Create a New Backlog"></Tooltip>
+                        </tooltip>
+                        <graphic>
+                            <ImageView>
+                                <Image url="/imgs/toolbar/backlog.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="toolbarPerson" onAction="#menuBarNewPersonButton" styleClass="mainbuttonstyle">
+                        <tooltip>
+                            <Tooltip text="Creates a New Person"></Tooltip>
+                        </tooltip>
+                        <graphic>
+                            <ImageView>
+                                <Image url="/imgs/toolbar/person.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="toolbarProject" onAction="#menuBarNewProjectButton" styleClass="mainbuttonstyle">
+                        <tooltip>
+                            <Tooltip text="Creates a New Project"></Tooltip>
+                        </tooltip>
+                        <graphic>
+                            <ImageView>
+                                <Image url="/imgs/toolbar/project.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="toolbarRelease" onAction="#menuBarNewReleaseButton" styleClass="mainbuttonstyle">
+                        <tooltip>
+                            <Tooltip text="Creates a New Release"></Tooltip>
+                        </tooltip>
+                        <graphic>
+                            <ImageView>
+                                <Image url="/imgs/toolbar/release.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="toolbarSkill" onAction="#menuBarNewSkillButton" styleClass="mainbuttonstyle">
+                        <tooltip>
+                            <Tooltip text="Creates a New Skill"></Tooltip>
+                        </tooltip>
+                        <graphic>
+                            <ImageView>
+                                <Image url="/imgs/toolbar/skill.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="toolbarSprint" onAction="#menuBarNewSprintButton" styleClass="mainbuttonstyle">
+                        <tooltip>
+                            <Tooltip text="Creates a New Sprint"></Tooltip>
+                        </tooltip>
+                        <graphic>
+                            <ImageView>
+                                <Image url="/imgs/toolbar/sprint.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="toolbarStory" onAction="#menuBarNewStoryButton" styleClass="mainbuttonstyle">
+                        <tooltip>
+                            <Tooltip text="Creates a New Story"></Tooltip>
+                        </tooltip>
+                        <graphic>
+                            <ImageView>
+                                <Image url="/imgs/toolbar/story.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="toolbarTeam" onAction="#menuBarNewTeamButton" styleClass="mainbuttonstyle">
+                        <tooltip>
+                            <Tooltip text="Creates a New Team"></Tooltip>
+                        </tooltip>
+                        <graphic>
+                            <ImageView>
+                                <Image url="/imgs/toolbar/team.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </HBox>
+                <Separator styleClass="separator" fx:id="separatorthree"/>
+                <HBox fx:id="toolbarLogger" spacing="5">
+                    <Button fx:id="toolbarLogHours" onAction="#menuBarNewTimeLogButton" styleClass="mainbuttonstyle">
+                        <tooltip>
+                            <Tooltip text="log Hours to a task"></Tooltip>
+                        </tooltip>
+                        <text>
+                            Log Hours
+                        </text>
+                    </Button>
+                </HBox>
+            </ToolBar>
+            <ToolBar fx:id="breadCrumbToolBar" styleClass="breadcrumbs" >
+
+            </ToolBar>
+        </VBox>
+    </top>
+
+    <center>
+        <TabPane fx:id="tabs">
+            <tabs>
+                <Tab fx:id="overViewTab" text="Overview" closable="false">
+                    <!--<Pane styleClass="body" prefWidth="500" prefHeight="500">
+                        <VBox fx:id="personInfo" styleClass="body">
+                            <children>
+                                <Label fx:id="infoLabel" alignment="TOP_LEFT" text="Main Information Pane" styleClass="mainPaneTitle"></Label>
+                                <Label fx:id="infoText" text="Information about an item will be displayed here." BorderPane.alignment="CENTER" wrapText="true" styleClass="mainPaneInfo"></Label>
+                            </children>
+                        </VBox>
+                    </Pane!-->
+                </Tab>
+                <Tab fx:id="scrumBoardTab" text="Scrum" closable="false">
+                </Tab>
+                <Tab fx:id="burndownChartTab" text="Burndown" closable="false">
+                </Tab>
+                <Tab fx:id="allTasksTab" text="All Tasks" closable="false">
+                </Tab>
+                <Tab fx:id="storyWorkspaceTab" text="Story Workspace" closable="false">
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+
+    <bottom>
+        <Label fx:id="outputLine" prefHeight="15" prefWidth="Infinity" styleClass="outputLine"></Label>
+    </bottom>
+
+
+</BorderPane>

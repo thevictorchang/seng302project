@@ -1,0 +1,458 @@
+.outputLine{
+    -fx-background-color: white;
+}
+
+.menubar{
+    -fx-background-color: #66BB6A;
+}
+.menubar .list-view{
+    -fx-border-color: transparent;
+}
+
+.menu-button:hover{
+    -fx-background-color: #2E7D32, #4CAF50;
+}
+
+.menu-item:hover{
+    -fx-background-color: #2E7D32, #4CAF50;
+}
+
+.menu-button:showing{
+    -fx-background-color: #2E7D32, #4CAF50;
+}
+
+.menu-button:focused{
+    -fx-background-color: #2E7D32, #4CAF50;
+}
+
+.menu-item:focused{
+    -fx-background-color: #2E7D32, #4CAF50;
+    -fx-border-color: transparent;
+}
+
+.body{
+    -fx-fit-to-width: true;
+    -fx-fit-to-height: true;
+    -fx-background-insets: 0;
+    -fx-background-color: #F5F5F5;
+}
+.bodyList{
+    -fx-background-color: lightgrey;
+    /*-fx-effect: dropshadow(gaussian, grey, 25, 0.1, 0, 18);*/
+}
+
+.bodyList:empty {
+    -fx-background-color: lightgrey;
+}
+
+.underline{
+    -fx-underline: true;
+}
+
+.breadcrumbs {
+    -fx-padding: 0 50 10 10;
+    -fx-background-color: #81C784;
+
+}
+
+.breadcrumbs .item {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-border-color: null;
+    -fx-border-insets: 0;
+    -fx-border-image-source: url("../imgs/crumb.png");
+    -fx-border-image-slice: 1 10 1 10 fill;
+    -fx-border-image-width: 1 10 1 10;
+    -fx-border-image-repeat: stretch;
+    -fx-font-size: 12px;
+}
+
+.breadcrumbs .item:hover {
+    -fx-border-image-source: url("../imgs/crumb-hover.png");
+}
+
+.breadcrumbs .alone {
+    -fx-border-image-width: 2 0 3 0;
+    -fx-border-image-repeat: stretch;
+    -fx-border-image-source: url("../imgs/crumb-selected.png");
+    -fx-border-color: transparent #6e737d transparent rgba(255,255,255,0.3) , transparent rgba(255,255,255,0.3) transparent transparent;
+
+    -fx-background-insets: -50 0 0 0;
+    -fx-border-image-insets: -1 0 -1 0;
+}
+
+.breadcrumbs .first {
+    -fx-border-image-insets: -2 -5 -1 0;
+    -fx-border-image-width: 0 10 0 1;
+}
+
+.breadcrumbs .middle {
+    -fx-border-image-insets: -2 -5 -2 -7;
+}
+
+.breadcrumbs .last {
+    -fx-border-image-insets: 0 0 0 -7;
+    -fx-border-image-width: 0 0 0 10;
+    -fx-border-image-repeat: stretch;
+    -fx-border-image-source: url("../imgs/crumb-selected.png");
+    -fx-border-color: transparent #6e737d transparent transparent , transparent rgba(255,255,255,0.2) transparent transparent;
+    -fx-border-insets: 0 0 1 0, 1;
+}
+.mainPaneTitle {
+    -fx-padding: 20 0 0 20;
+    -fx-underline: false;
+    -fx-font-weight: bold;
+    -fx-font-size: 300%;
+    -fx-fit-to-width: true;
+}
+
+.mainPaneInfo {
+    -fx-padding: 20 0 0 20;
+    -fx-font-size: 100%;
+    -fx-fit-to-width: true;
+}
+
+.toolbar {
+    -fx-background-color: #81C784;
+    -fx-padding: 10;
+}
+
+.mainbuttonstyle {
+    -fx-font-size: 13.0px;
+    -fx-base: #81C784;
+    -fx-background: #e5f3f6;
+    -fx-focus-color: #43A047;
+    -fx-control-inner-background: #FFFFFF;
+    -fx-text-base-color: #FFFFFF;
+    -fx-background-color:#81C784;
+    -fx-background-insets: 0px;
+    -fx-background-radius: 0px;
+    -fx-padding: 0.166667em 0.633333em 0.25em 0.633333em; /* 2 10 3 10 */
+    -fx-text-fill: -fx-text-base-color;
+    -fx-alignment: CENTER;
+    -fx-content-display: LEFT;
+    -fx-border-style: hidden;
+
+}
+
+
+.mainbuttonstyle:hover {
+    -fx-focus-color: #FF0000;
+    -fx-background-color: #2E7D32, #66BB6A;
+}
+
+
+.mainbuttonstyle:pressed {
+    -fx-focus-color: #FF0000;
+    -fx-background-color: #2E7D32, #4CAF50;
+}
+
+.separator:vertical .line {
+    -fx-border-color: transparent #1B5E20 transparent transparent;
+}
+
+.orderSelectionBox{
+    -fx-padding: 20 4 4 6;
+    -fx-background-color: white;
+}
+
+.orderSelectionCombo{
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(gaussian, grey, 3, 0.1, 1, 1);
+
+}
+
+.orderSelectionCombo .list-view{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(gaussian, grey, 5, 0.1, 0, 0);
+}
+
+.orderSelectionCombo .list-view .list-cell{
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-border-color: transparent;
+}
+
+
+.orderSelectionCombo .list-view .list-cell:hover{
+    -fx-background-color: #81C784;
+    -fx-text-fill: black;
+    -fx-border-color: transparent;
+}
+.orderSelectionCombo .list-view .list-cell:selected{
+    -fx-background-color: #66BB6A;
+    -fx-text-fill: black;
+    -fx-border-color: transparent;
+}
+
+.navigatorListView {
+    -fx-background-insets: 0;
+
+}
+
+.list-view .list-cell{
+    -fx-padding: 10;
+    -fx-background-color: white;
+}
+
+/*.list-view .list-cell:hover{
+    -fx-background-color: #EEEEEE;
+}*/
+
+.list-view .list-cell:focused{
+    -fx-background-color: #66BB6A;
+}
+
+
+
+.topBar{
+    -fx-effect: dropshadow(gaussian, grey, 25, 0.1, 0, -5);
+}
+
+.scrumBoardTaskList{
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+}
+
+.scrumBoardTaskList .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: black;
+}
+
+.scrumBoardTaskList .list-cell:focused {
+    -fx-background-color: transparent;
+    -fx-text-fill: black;
+}
+
+.scrumBoardTaskList .list-cell:pressed{
+    -fx-background-color: transparent;
+    -fx-text-fill: black;
+}
+
+.scrumBoardStoryList{
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+
+}
+
+.scrumBoardStoryList .list-cell{
+    -fx-background-color: transparent;
+    -fx-text-fill: black;
+}
+
+.scrumBoardStoryList .list-cell:focused {
+    -fx-background-color: transparent;
+    -fx-text-fill: black;
+}
+
+.scrumBoardStoryList .list-cell:filled:selected{
+    -fx-text-fill: black;
+
+}
+
+.taskLabel{
+    -fx-background-color: lightgray;
+    -fx-text-fill: black;
+}
+
+.scrumBoardScrollPane{
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.scrumBoardScrollPane:selected{
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+.scrumBoardScrollPane:focused{
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.scrumBoardStoryStatusCombo{
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(gaussian, grey, 3, 0.1, 1, 1);
+
+}
+
+.scrumBoardStoryStatusCombo .list-view{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(gaussian, grey, 3, 0.1, 0, 0);
+}
+
+.scrumBoardStoryStatusCombo .list-view .list-cell{
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-border-color: transparent;
+}
+
+
+.scrumBoardStoryStatusCombo .list-view .list-cell:hover{
+    -fx-background-color: #81C784;
+    -fx-text-fill: black;
+    -fx-border-color: transparent;
+}
+.scrumBoardStoryStatusCombo .list-view .list-cell:selected{
+    -fx-background-color: #66BB6A;
+    -fx-text-fill: black;
+
+    -fx-border-color: transparent;
+}
+
+.addTaskButton{
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(gaussian, grey, 3, 0.1, 1, 1);
+    -fx-background-radius: 2;
+}
+.addTaskButton:hover{
+    -fx-focus-color: lightgray;
+    -fx-background-color: lightgray;
+}
+
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb{
+    -fx-background-color: lightgray;
+}
+
+.tab-header-background{
+    -fx-background-color: #81C784;
+}
+
+.tab{
+    -fx-background-color: #81C784;
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+    -fx-background-radius: 0;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.tab-pane:top *.tab-header-area {
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em 0.0em 0.0em 0.0em; /* overridden as 5 2 0 0 */
+}
+
+.tab:selected{
+    -fx-background-color: white;
+    -fx-border-color: white;
+}
+
+.durationPrompt {
+    -fx-prompt-text-fill: derive(-fx-control-inner-background,-30%);
+}
+
+.durationPrompt:focused {
+    -fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);
+}
+
+.scrumBoardStoryItemGraphic{
+    -fx-padding: 10;
+    -fx-background-color: lightgray;
+}
+
+.scrumBoardStoryItemGraphicDetail{
+    -fx-padding: 10;
+    -fx-background-color: #ebebeb;
+}
+
+
+.chevronstyle {
+    -fx-base: #81C784;
+    -fx-background: #e5f3f6;
+    -fx-focus-color: #43A047;
+    -fx-control-inner-background: #FFFFFF;
+    -fx-text-base-color: #1b5e20;
+    -fx-text-fill: -fx-text-base-color;
+    -fx-background-color:#81C784;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0px;
+    -fx-background-radius: 1px;
+    -fx-border-style: hidden;
+
+}
+
+.taskButtons {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+
+}
+
+.taskButtons:hover{
+    -fx-effect: dropshadow(gaussian, grey, 3, 0.1, 1, 1);
+}
+
+.gridPane{
+    -fx-padding: 30px;
+}
+
+.gridPaneButton{
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(gaussian, grey, 3, 0.1, 1, 1);
+    -fx-background-radius: 2;
+    -fx-pref-width: 400px;
+}
+.gridPaneButton:hover{
+    -fx-focus-color: lightgray;
+    -fx-background-color: lightgray;
+}
+.gridLabel{
+    -fx-effect: dropshadow(gaussian, #c8c8c8, -3, 0.1, 1, 1);
+    -fx-wrap-text: true;
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+    -fx-background-radius: 2;
+    -fx-pref-width: 400px;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+    -fx-label-padding: 10px;
+}
+
+.gridPaneListButton{
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(gaussian, grey, 3, 0.1, 1, 1);
+    -fx-background-radius: 2;
+    -fx-pref-width: 770px;
+}
+.gridPaneListButton:hover {
+    -fx-focus-color: lightgray;
+    -fx-background-color: lightgray;
+}
+
+.gridPaneTitle{
+    -fx-font-size: 300%;
+    -fx-font-weight: bold;
+}
+
+.gridPaneLabel{
+    -fx-font-size: 150%;
+}
+
+.gridPaneListView{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-size: contain;
+}
+
+.gridPaneListView .list-cell{
+    -fx-background-color: transparent;
+}
+
+.gridPaneListView .list-cell:selected{
+    -fx-background-color: transparent;
+}
+
+
+

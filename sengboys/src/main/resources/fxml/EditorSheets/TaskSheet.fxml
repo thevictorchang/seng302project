@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml" stylesheets="/css/editorSheet.css" styleClass="container">
+    <GridPane hgap="2" vgap="5">
+        <Label GridPane.rowIndex="0" GridPane.columnIndex="0">Short Name: </Label>
+        <TextField GridPane.rowIndex="0" GridPane.columnSpan="2" GridPane.columnIndex="1" fx:id="shortNameTextField"/>
+
+        <Label GridPane.rowIndex="2" GridPane.columnIndex="0">Description: </Label>
+        <TextField GridPane.rowIndex="2" GridPane.columnSpan="2" GridPane.columnIndex="1" fx:id="descriptionTextField"/>
+
+        <Label GridPane.rowIndex="3" GridPane.columnIndex="0">Estimate: </Label>
+        <TextField GridPane.rowIndex="3" GridPane.columnSpan="1" GridPane.columnIndex="1" fx:id="estimateField"/>
+        <Label GridPane.rowIndex="3" GridPane.columnIndex="2">hours</Label>
+
+        <Label GridPane.rowIndex="4" GridPane.columnIndex="0">Task Type: </Label>
+        <ComboBox fx:id="taskTypeComboBox" GridPane.rowIndex="4" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"/>
+
+        <Label GridPane.rowIndex="5" GridPane.columnIndex="0">Comments: </Label>
+        <TextField GridPane.rowIndex="6" GridPane.columnSpan="2" GridPane.columnIndex="0" fx:id="commentField" promptText="New Comment"/>
+        <Button minWidth="10" GridPane.rowIndex="6" GridPane.columnIndex="2" onAction="#addComment" styleClass="dialogButton">
+            <graphic>
+                <ImageView>
+                    <Image url="/imgs/plus.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+        <ListView fx:id="commentsListView" GridPane.rowIndex="7" GridPane.columnIndex="0" GridPane.columnSpan="3" prefHeight="100"/>
+
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="8" GridPane.columnSpan="2" styleClass="errorlabel" fx:id="errorLabel"/>
+
+    </GridPane>
+</VBox>

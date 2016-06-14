@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<VBox xmlns:fx="http://javafx.com/fxml" stylesheets="/css/editorSheet.css" styleClass="container">
+    <GridPane hgap="10" vgap="5">
+
+        <Label GridPane.rowIndex="0" GridPane.columnIndex="0">Sprint Goal: </Label>
+        <TextField GridPane.rowIndex="0" GridPane.columnIndex="1" GridPane.columnSpan="2" fx:id="shortNameTextField"/>
+
+        <Label GridPane.rowIndex="1" GridPane.columnIndex="0">Full Name: </Label>
+        <TextField GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.columnSpan="2" fx:id="fullNameTextField"/>
+
+        <Label GridPane.rowIndex="2" GridPane.columnIndex="0">Description: </Label>
+        <TextField GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.columnSpan="2" fx:id="descriptionTextField"/>
+
+        <Label GridPane.rowIndex="3" GridPane.columnIndex="0">Select Dates: </Label>
+        <Button GridPane.rowIndex="3" GridPane.columnIndex="1" GridPane.columnSpan="2" prefWidth="200"  fx:id="buttonSelectDates" onAction="#buttonSelectDates" styleClass="dialogButton">
+        Dates not selected
+        </Button>
+
+        <Label GridPane.rowIndex="4" GridPane.columnIndex="0">Release: </Label>
+        <ComboBox  GridPane.rowIndex="4" GridPane.columnIndex="1" GridPane.columnSpan="2" prefWidth="200" value="None" fx:id="releaseChoice" styleClass="dialogCombo"/>
+
+        <Label GridPane.rowIndex="5" GridPane.columnIndex="0">Release Date: </Label>
+        <Label GridPane.rowIndex="5" GridPane.columnIndex="1" GridPane.columnSpan="2" fx:id="releaseDate">Select a release</Label>
+
+        <Label GridPane.rowIndex="6" GridPane.columnIndex="0">Team: </Label>
+        <ComboBox  GridPane.rowIndex="6" GridPane.columnIndex="1" GridPane.columnSpan="2" prefWidth="200" value="None" fx:id="teamChoice" styleClass="dialogCombo"/>
+
+        <Label GridPane.rowIndex="7" GridPane.columnIndex="0">Backlog: </Label>
+        <ComboBox  GridPane.rowIndex="7" GridPane.columnIndex="1" GridPane.columnSpan="2" prefWidth="200" value="None" fx:id="backlogChoice" styleClass="dialogCombo"/>
+
+
+        <Label GridPane.rowIndex="8" GridPane.columnIndex="0" text="Current Stories"></Label>
+        <VBox GridPane.rowIndex="9" GridPane.columnIndex="0" GridPane.rowSpan="5" fx:id="currentStoriesList" prefHeight="150">
+            <children>
+                <ListView fx:id="allCurrentStoriesListView" prefWidth="150.0" />
+                <TextField fx:id="currentStoriesTextField" promptText="Search"></TextField>
+            </children>
+        </VBox>
+
+        <Label GridPane.rowIndex="8" GridPane.columnIndex="2" text="Available Stories"></Label>
+        <VBox GridPane.rowIndex="9" GridPane.columnIndex="2" GridPane.rowSpan="5" fx:id="availableStoriesList" prefHeight="150">
+            <children>
+                <ListView fx:id="allAvailableStoriesListView" prefWidth="150.0" />
+                <TextField fx:id="availableStoriesTextField" promptText="Search"></TextField>
+            </children>
+        </VBox>
+
+        <Button minWidth="10" GridPane.rowIndex="10" GridPane.columnIndex="1" fx:id="buttonAddStory" onAction="#buttonAddStory" styleClass="dialogButton">
+            <graphic>
+                <ImageView>
+                    <Image url="/imgs/leftArrow.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <Button minWidth="10" GridPane.rowIndex="11" GridPane.columnIndex="1" fx:id="buttonRemoveStory" onAction="#buttonRemoveStory" styleClass="dialogButton">
+            <graphic>
+                <ImageView>
+                    <Image url="/imgs/rightArrow.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <Label GridPane.rowIndex="0" GridPane.columnIndex="3" GridPane.columnSpan="3" text="Tasks"/>
+        <ListView GridPane.rowIndex="1" GridPane.columnIndex="3" GridPane.rowSpan="4" GridPane.columnSpan="3" fx:id="sprintTasksListView" prefWidth="300.0" prefHeight="20"></ListView>
+        <Button minWidth="10" GridPane.rowIndex="5" GridPane.columnIndex="3" fx:id="buttonNewTask" onAction="#buttonNewTask" styleClass="dialogButton">
+            <graphic>
+                <ImageView>
+                    <Image url="/imgs/plus.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button minWidth="10" GridPane.rowIndex="5" GridPane.columnIndex="4" fx:id="buttonEditTask" onAction="#buttonEditTask" styleClass="dialogButton">
+            <graphic>
+                <ImageView>
+                    <Image url="/imgs/pencil.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button minWidth="10" GridPane.rowIndex="5" GridPane.columnIndex="5" fx:id="buttonDeleteTask" onAction="#buttonDeleteTask" styleClass="dialogButton">
+            <graphic>
+                <ImageView>
+                    <Image url="/imgs/rubbishbin.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <Label GridPane.rowIndex="6" GridPane.columnIndex="3" styleClass="errorlabel" fx:id="backlogErrorLabel"/>
+        <Label GridPane.rowIndex="7" GridPane.columnIndex="3"  GridPane.columnSpan="3" styleClass="errorlabel" fx:id="errorLabel"/>
+        <Label GridPane.rowIndex="8" GridPane.columnIndex="3"  GridPane.columnSpan="3" styleClass="conflictlabel" fx:id="endDateAfterReleaseDateErrorLabel"/>
+        <Label GridPane.rowIndex="9" GridPane.columnIndex="3"  GridPane.columnSpan="3" styleClass="errorlabel" fx:id="addingStoryNotReadyErrorLabel"/>
+
+
+    </GridPane>
+</VBox>
